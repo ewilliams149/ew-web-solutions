@@ -100,8 +100,8 @@ header {
 .card a {
     align-items: center;
     background-color: #F2F2F0;
-    border-radius: 5px;
-    box-shadow: 10px 10px 5px 5px #0d0d0d;
+    border: 3px solid #000000;
+    /* box-shadow: 10px 10px 5px 5px #0d0d0d; */
     display: flex;
     gap: 15%;
     margin-bottom: 2rem;
@@ -166,9 +166,10 @@ footer nav {
     gap: 1rem;
 }
 
+/* Basic layout and navbar */
 @media screen and (min-width: 1200px) {
     .flex {
-        align-items: center;
+        align-items: center;  
         display: flex;
         justify-content: space-between;
     }
@@ -198,7 +199,41 @@ footer nav {
         display: flex;
     }
 
+    /* Hamburger Button */
     .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .bar {
+        width: 30px;
+        height: 4px;
+        background-color: #000;
+        transition: all 0.3s ease;
+    }
+
+    /* Hamburger to X transition */
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg);
+        transform-origin: top left;
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        transform-origin: bottom left;
+    }
+
+    /* Menu visibility */
+    .navbar.show {
         display: flex;
     }
 }
