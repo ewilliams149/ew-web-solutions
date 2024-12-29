@@ -143,11 +143,16 @@ header {
     text-align: center;
 }
 
+.project-view {
+    text-align: center;
+}
+
 .project-view div {
     text-align: center;
 }
 
 .project-view div img {
+    margin-top: 1rem;
     max-width: 35rem;
     width: 100%;
 }
